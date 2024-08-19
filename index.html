@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.......</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: 1000px;
+        }
+
+        .letter-container {
+            width: 300px;
+            height: 400px;
+            position: relative;
+        }
+
+        .letter {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            transform: rotateY(0deg);
+        }
+
+        .letter.open {
+            transform: rotateY(-180deg);
+        }
+
+        .letter-side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background: #fff;
+            padding: 20px;
+        }
+
+        .letter-front {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .letter-back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #e9ecef;
+            color: #333;
+        }
+
+        .letter-back h1 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .letter-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .letter-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="letter-container">
+        <div class="letter" id="letter">
+            <div class="letter-side letter-front">
+                <button class="letter-button" onclick="openLetter()">ເປຶດໃຫ້ແນ່🥺</button>
+            </div>
+            <div class="letter-side letter-back">
+                <h1>ຝາກຫາເອື້ອຍ</h1>
+                <p>ເອື້ອຍເຮັດວຽກແຕ່ລະມື້ເອື້ອຍຄືສິເມື່ອຍແຮງນ້ອງຢາກບອກວ່າເອື້ອຍເກັ່ງຫລາຍທີ່ເຮັດວຽກມາຍັງມາຕໍ່ວຽກບ້ານອີກ
+                    ນ້ອງຂໍເປັນກຳລັງໃຈໃຫ້ເອື້ອຍນ້ອງຢາກບອກວ່າເອື້ອຍເປັນຄົນເກັ່ງຫລາຍ ນ້ອງຢາກຂໍໃຫ້ເອື້ອຍຢ່າຝືນເກິນໄປ
+                    ແລ້ວອີກຢ່າງຢາກໃຫ້ເອື້ອຍກິນເຂົ້າໃສ່ຫລາຍໆຈື່ງມີແຮງເຮັດວຽກ💖</p>
+                <p>ຂໍໃຫ້ມີສູຂະພາບແຂງແຮງມີຄວາມສູກຈະຫລອດໄປ</p>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function openLetter() {
+            document.getElementById('letter').classList.toggle('open');
+        }
+    </script>
+</body>
+
+</html>
